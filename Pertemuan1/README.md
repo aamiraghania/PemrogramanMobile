@@ -14,7 +14,7 @@
 
 ### Hasil Flutter Doctor
 
-Berikut ini adalah hasil dari perintah `flutter doctor` yang menunjukkan bahwa semua komponen telah terinstal dan terkonfigurasi dengan baik:
+Berikut adalah hasil dari perintah `flutter doctor` yang menunjukkan bahwa semua komponen telah terinstal dan terkonfigurasi dengan baik:
 
 ![Hasil Flutter Doctor](hasil_flutter_doctor.png)
 
