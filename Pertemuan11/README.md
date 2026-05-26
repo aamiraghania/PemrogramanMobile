@@ -18,11 +18,14 @@ Tanda berhasil install plugin: plugin http telah ada di file pubspec.
 
 ### Langkah 3: Buka file main.dart
 #### Soal 1: Tambahkan nama panggilan pada title app
+
 ![Hasil Praktikum](images/praktikum1_langkah3_pt1.png)
+
 ![Hasil Praktikum](images/praktikum1_langkah3_pt2.png)
 
 ### Langkah 4: Tambah method getData()
 Penambahan method berikut ke dalam class _FuturePageState yang berguna untuk mengambil data dari API Google Books.
+
 ![Hasil Praktikum](images/praktikum1_langkah4_pt1.png)
 
 #### Soal 2
@@ -30,14 +33,17 @@ Penambahan method berikut ke dalam class _FuturePageState yang berguna untuk men
 ## Praktikum 2: Menggunakan await/async untuk menghindari callbacks
 ### Langkah 1: Buka file main.dart
 Menambahkan tiga method berisi kode seperti berikut di dalam class _FuturePageState.
+
 ![Hasil Praktikum](images/praktikum2_langkah1.png)
 
 ### Langkah 2: Tambah method count()
 Lalu menambahkan lagi method ini di bawah ketiga method sebelumnya.
+
 ![Hasil Praktikum](images/praktikum2_langkah2.png)
 
 ### Langkah 3: Panggil count()
 Lakukan comment kode sebelumnya, ubah isi kode onPressed() menjadi seperti berikut.
+
 ![Hasil Praktikum](images/praktikum2_langkah3.png)
 
 ### Langkah 4: Run
@@ -54,5 +60,39 @@ Lakukan comment kode sebelumnya, ubah isi kode onPressed() menjadi seperti berik
 - Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 4".
 
     ![Hasil Praktikum](images/praktikum2_soal4.gif)
+
+## Praktikum 3: Menggunakan Complemeter di Future
+### Langkah 1: Buka main.dart
+Impor package async.
+
+![Hasil Praktikum](images/praktikum3_langkah1.png)
+
+### Langkah 2: Tambahkan variabel dan method
+Menambahkan variabel late dan method di class _FuturePageState.
+
+![Hasil Praktikum](images/praktikum3_langkah2.png)
+
+### Langkah 3: Ganti isi kode onPressed()
+Menambahkan kode berikut pada fungsi onPressed(). Kode sebelumnya di comment.
+
+![Hasil Praktikum](images/praktikum3_langkah3.png)
+
+### Langkah 4: 
+Run aplikasi. Hasilnya, setelah 5 detik, maka angka 42 akan tampil.
+
+#### Soal 5
+- Jelaskan maksud kode langkah 2 berikut!
+
+    Jawab:
+
+    Kode tersebut digunakan untuk membuat proses asynchronous dengan bantuan Completer. Pada method getNumber(), program membuat objek Completer<int> lalu menjalankan method calculate() dan mengembalikan future milik completer. Selanjutnya, pada method calculate(), program menunggu selama 5 detik menggunakan Future.delayed() untuk mensimulasikan proses yang membutuhkan waktu, seperti mengambil data dari server. Setelah 5 detik, method completer.complete(42) dijalankan untuk menyelesaikan Future dan mengirimkan nilai 42 sebagai hasil akhirnya.
+
+- Capture hasil praktikum berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 5".
+
+    Jawab:
+
+    ![Hasil Praktikum](images/praktikum3_soal5.gif)
+
+    
 
 
