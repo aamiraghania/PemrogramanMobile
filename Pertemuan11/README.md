@@ -93,6 +93,29 @@ Run aplikasi. Hasilnya, setelah 5 detik, maka angka 42 akan tampil.
 
     ![Hasil Praktikum](images/praktikum3_soal5.gif)
 
+### Langkah 5: Ganti method calculate()
+Mengganti isi code method calculate().
+
+![Hasil Praktikum](images/praktikum3_langkah5.png)
+
+### Langkah 6: Pindah ke onPressed()
+Ganti menjadi kode seperti berikut.
+
+![Hasil Praktikum](images/praktikum3_langkah6.png)
+
+#### Soal 6
+- Jelaskan maksud perbedaan kode langkah 2 dengan langkah 5-6 tersebut!
+
+    Jawab:
+
+    Pada langkah 2, method calculate() hanya menjalankan proses asynchronous dengan menunggu 5 detik lalu mengembalikan nilai 42 menggunakan completer.complete(42), sehingga Future selalu berhasil. Sedangkan pada langkah 5, kode ditambahkan try-catch untuk menangani kemungkinan error dengan completer.completeError(). Oleh karena itu, pada langkah 6 ditambahkan .catchError() di onPressed() agar aplikasi dapat menangkap error dan menampilkan pesan "An error occurred". Jadi, langkah 2 hanya menangani proses sukses, sedangkan langkah 5–6 sudah mendukung error handling.
+
+- Capture hasil praktikum berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 6".
+
+    Jawab:
+
+    ![Hasil Praktikum](images/praktikum3_soal5.gif)
+
     
 
 
