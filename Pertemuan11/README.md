@@ -149,6 +149,39 @@ Dapat menggunakan FutureGroup dengan Future.wait seperti kode berikut.
 
     Perbedaan kode langkah 1 dan langkah 4 terletak pada cara menggabungkan beberapa proses asynchronous (Future). Pada langkah 1 digunakan FutureGroup, sehingga setiap Future harus ditambahkan satu per satu menggunakan add() lalu ditutup dengan close() agar dapat diproses. Sedangkan pada langkah 4 digunakan Future.wait() yang lebih sederhana karena cukup menuliskan semua Future dalam satu list tanpa perlu add() dan close(). Oleh karena itu, Future.wait() membuat kode menjadi lebih ringkas, mudah dibaca, dan lebih praktis digunakan.
 
+## Praktikum 5: Menangani Respon Error pada Async Code
+
+### Langkah 1: Buat file main.dart
+Menambahkan method ini ke dalam class _FuturePageState
+
+![Hasil Praktikum](images/praktikum5_langkah1.png)
+
+### Langkah 2: ElevatedButton
+Ganti dengan kode berikut
+
+![Hasil Praktikum](images/praktikum5_langkah2.png)
+
+### Langkah 3: Run
+Run dan klik tombol GO!
+
+#### Soal 9
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 9".
+
+    Jawab:
+
+    ![Hasil Praktikum](images/praktikum5_soal9_pt1.gif)
+
+    Pada bagian debug console akan terlihat teks Complete.
+
+    ![Hasil Praktikum](images/praktikum5_soal9_pt2.png)
+
+
+
+
+
+
+
+
 
 
 
