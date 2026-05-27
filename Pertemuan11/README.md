@@ -116,6 +116,46 @@ Ganti menjadi kode seperti berikut.
 
     ![Hasil Praktikum](images/praktikum3_soal5.gif)
 
+## Praktikum 4: Memanggil Future secara paralel
+### Langkah 1: Buka file main.dart
+Menambahkan method ini ke dalam class _FuturePageState
+
+![Hasil Praktikum](images/praktikum4_langkah1.png)
+
+### Langkah 2: Edit onPressed()
+Hapus atau comment kode sebelumnya, kemudian panggil method dari langkah 1 tersebut.
+
+![Hasil Praktikum](images/praktikum4_langkah2.png)
+
+### Langkah 3: Run
+Anda akan melihat hasilnya dalam 3 detik berupa angka 6 lebih cepat dibandingkan praktikum sebelumnya menunggu sampai 9 detik.
+
+#### Soal 7
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 7".
+
+    Jawab:
+
+    ![Hasil Praktikum](images/praktikum4_soal7.gif)
+
+### Langkah 4: Ganti variabel futureGroup
+Dapat menggunakan FutureGroup dengan Future.wait seperti kode berikut.
+
+![Hasil Praktikum](images/praktikum4_langkah4.png)
+
+#### Soal 8
+- Jelaskan maksud perbedaan kode  langkah 1 dan 4!
+
+    Jawab:
+
+    Perbedaan kode langkah 1 dan langkah 4 terletak pada cara menggabungkan beberapa proses asynchronous (Future). Pada langkah 1 digunakan FutureGroup, sehingga setiap Future harus ditambahkan satu per satu menggunakan add() lalu ditutup dengan close() agar dapat diproses. Sedangkan pada langkah 4 digunakan Future.wait() yang lebih sederhana karena cukup menuliskan semua Future dalam satu list tanpa perlu add() dan close(). Oleh karena itu, Future.wait() membuat kode menjadi lebih ringkas, mudah dibaca, dan lebih praktis digunakan.
+
+
+
+
+
+
+
+
     
 
 
