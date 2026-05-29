@@ -175,13 +175,136 @@ Run dan klik tombol GO!
 
     ![Hasil Praktikum](images/praktikum5_soal9_pt2.png)
 
+### Langkah 4: Tambah method handleError()
+Menambahkan kode ini di dalam class _FutureStatePage
+
+![Hasil Praktikum](images/praktikum5_langkah4.png)
+
+#### Soal 10
+- Panggil method handleError() tersebut di ElevatedButton, lalu run. Apa hasilnya? Jelaskan perbedaan kode langkah 1 dan 4!
+
+    Jawab:
+
+    ![Hasil Praktikum](images/praktikum5_soal10.gif)
+
+    Hasil dari kode tersebut adalah program akan menampilkan pesan error "Exception: Something terrible happened!" setelah menunggu sekitar 2 detik. Hal ini terjadi karena method returnError() sengaja menghasilkan error menggunakan throw Exception(). 
+    
+    Pada langkah 1, kode hanya membuat method untuk menghasilkan error tanpa penanganan khusus, sehingga jika dipanggil langsung program dapat mengalami error. Sedangkan pada langkah 4 ditambahkan method handleError() yang menggunakan try-catch-finally untuk menangani error tersebut. Bagian catch digunakan untuk menangkap dan menampilkan pesan error ke variabel result, sedangkan finally akan selalu dijalankan dan menampilkan tulisan "Complete" meskipun terjadi error.
+
+## Praktikum 6: Menggunakan Future dengan StatefulWidget
+### Langkah 1: install plugin geolocator
+Menambahkan plugin geolocator dengan mengetik perintah berikut di terminal.
+
+![Hasil Praktikum](images/praktikum6_langkah1.png)
+
+### Langkah 2: Tambah permission GPS
+Karena menargetkan untuk platform Android, maka menambahkan baris kode berikut di file android/app/src/main/androidmanifest.xml
+
+![Hasil Praktikum](images/praktikum6_langkah2.png)
+
+### Langkah 3: Buat file geolocation.dart
+Menambahkan file baru ini di folder lib project.
+
+### Langkah 4: Buat StatefulWidget
+Membuat class LocationScreen di dalam file geolocation.dart
+
+### Langkah 5: Isi kode geolocation.dart
+#### Soal 11
+- Tambahkan nama panggilan Anda pada tiap properti title.
+
+    Jawab:
+
+    ![Hasil Praktikum](images/praktikum6_soal11.png)
+
+### Langkah 6: Edit main.dart
+Memanggil screen baru tersebut di file main.
+
+![Hasil Praktikum](images/praktikum6_langkah6.png)
+
+### Langkah 7: Run
+Run project di device atau emulator (bukan browser).
+
+![Hasil Praktikum](images/praktikum6_langkah7.jpeg)
+
+### Langkah 8: Tambahkan animasi loading
+Menambahkan widget loading di file geolocation.dart
+
+![Hasil Praktikum](images/praktikum6_langkah8.png)
+
+#### Soal 12
+- Tambahkan delay pada method getPosition() dengan kode await Future.delayed(const Duration(seconds: 3));
+
+    Jawab:
+
+    ![Hasil Praktikum](images/praktikum6_soal12_pt1.png)
+
+- Apakah Anda mendapatkan koordinat GPS ketika run di browser? Mengapa demikian?
+
+    Jawab:
+
+    ![Hasil Praktikum](images/praktikum6_soal12_pt2.gif)
+
+    Ya, saya tetap mendapatkan koordinat GPS saat dijalankan di browser karena browser yang digunakan mendukung fitur geolocation dan saya telah memberikan izin akses lokasi. Selain itu, perangkat yang digunakan memiliki layanan lokasi atau GPS yang aktif sehingga browser dapat mengambil koordinat lokasi dengan cukup akurat.
+
+- Capture hasil praktikum berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 12".
+
+    Jawab:
+
+    ![Hasil Praktikum](images/praktikum6_soal12_pt3.gif)
+
+## Praktikum 7: Manajemen Future dengan FutureBuilder
+### Langkah 1: Modifikasi method getPosition()
+Di file geolocation.dart, mengganti isi method dengan kode ini.
+
+![Hasil Praktikum](images/praktikum7_langkah1.png)
+
+### Langkah 2: Tambah variabel
+Menambah variabel berikut di class _LocationScreenState
+
+![Hasil Praktikum](images/praktikum7_langkah2.png)
+
+### Langkah 3: Tambah initState()
+Menambahkan method berikut dan set variabel position
+
+![Hasil Praktikum](images/praktikum7_langkah3.png)
+
+### Langkah 4: Edit method build()
+
+![Hasil Praktikum](images/praktikum7_langkah4.png)
+
+#### Soal 13
+- Apakah ada perbedaan UI dengan praktikum sebelumnya? Mengapa demikian?
+
+    Jawab:
+
+    Iya, terdapat perbedaan antara praktikum 6 dan 7.
+
+    Pada praktikum 6, pengelolaan state untuk mendeteksi lokasi GPS masih bersifat konvensional menggunakan setState(), sehingga kode cenderung lebih panjang karena harus melacak status loading secara manual. Pada Praktikum 7, penggunaan FutureBuilder memangkas kerumitan tersebut. Widget ini bertindak sebagai jembatan otomatis yang memantau perkembangan proses asinkron secara real-time dan langsung menyesuaikan tampilan berdasarkan statusnya (apakah masih memuat atau sudah selesai). 
+
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 13".
+
+![Hasil Praktikum](images/praktikum7_soal13.gif)
+
+### Langkah 5: Tambah handling error
+Penambahan kode berikut untuk menangani ketika terjadi error.
+
+![Hasil Praktikum](images/praktikum7_langkah5.png)
+
+#### Soal 14
+- Apakah ada perbedaan UI dengan langkah sebelumnya? Mengapa demikian?
+
+    Jawab:
+
+    Secara UI, aplikasi masih terlihat sama seperti sebelumnya karena tetap menampilkan loading indicator dan hasil koordinat lokasi. Namun, terdapat perubahan pada bagian pengelolaan error di dalam FutureBuilder.
+
+    Pada versi sebelumnya, aplikasi hanya menangani kondisi proses loading dan data berhasil diperoleh. Akibatnya, jika terjadi kegagalan saat mengambil lokasi, aplikasi tidak menampilkan informasi apa pun kepada pengguna.
+
+    Setelah ditambahkan kondisi snapshot.hasError, aplikasi kini dapat mendeteksi dan menampilkan pesan error ketika proses pengambilan lokasi mengalami masalah. Jadi, perubahan yang terjadi lebih berfokus pada peningkatan penanganan error agar aplikasi menjadi lebih informatif dan stabil.
 
 
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 14".
 
-
-
-
-
+    ![Hasil Praktikum](images/praktikum7_soal14.gif)
 
 
 
