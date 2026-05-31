@@ -306,10 +306,94 @@ Penambahan kode berikut untuk menangani ketika terjadi error.
 
     ![Hasil Praktikum](images/praktikum7_soal14.gif)
 
+## Praktikum 8: Navigation route dengan Future Function
+### Langkah 1: Buat file baru navigation_first.dart
+Membuat file baru ini di project lib.
 
+### Langkah 2: Isi kode navigation_first.dart
+#### Soal 15
+- Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerjaan Anda.
+- Silakan ganti dengan warna tema favorit Anda.
 
+     ![Hasil Praktikum](images/praktikum8_soal15.png)
 
+### Langkah 3: Tambah method di class _NavigationFirstState
 
+![Hasil Praktikum](images/praktikum8_langkah3.png)
+
+### Langkah 4: Buat file baru navigation_second.dart
+Membuat file baru ini di project lib.
+
+### Langkah 5: Buat class NavigationSecond dengan StatefulWidget
+
+![Hasil Praktikum](images/praktikum8_langkah5.png)
+
+### Langkah 6: Edit main.dart
+Edit properti home.
+
+![Hasil Praktikum](images/praktikum8_langkah6.png)
+
+### Langkah 8: Run
+#### Soal 16
+- Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
+
+    Jawab:
+
+    Ketika setiap button diklik, aplikasi akan menutup halaman NavigationSecond dan kembali ke halaman NavigationFirst. Bersamaan dengan itu, warna yang dipilih akan dikirim menggunakan Navigator.pop(context, color).
+
+    Di halaman NavigationFirst, nilai warna tersebut diterima lalu disimpan ke variabel color. Setelah setState() dijalankan, background halaman otomatis diperbarui sesuai warna yang dipilih pengguna. Karena itu, tampilan halaman pertama langsung berubah menjadi warna merah, hijau, atau biru sesuai button yang ditekan.
+
+- Gantilah 3 warna pada langkah 5 dengan warna favorit Anda!
+
+    Jawab:
+
+    ![Hasil Praktikum](images/praktikum8_soal16_pt1.png)
+
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 16".
+
+    ![Hasil Praktikum](images/praktikum8_soal16_pt2.gif)
+
+## Praktikum 9: Memanfaatkan async/await dengan Widget Dialog
+### Langkah 1: Buat file baru navigation_dialog.dart
+Membuat file dart baru di folder lib project Anda.
+
+### Langkah 2: Isi kode navigation_dialog.dart
+
+![Hasil Praktikum](images/praktikum9_langkah2.png)
+
+### Langkah 3: Tambah method async
+
+![Hasil Praktikum](images/praktikum9_langkah3.png)
+
+### Langkah 4: Panggil method di ElevatedButton
+
+![Hasil Praktikum](images/praktikum9_langkah4.png)
+
+### Langkah 5: Edit main.dart
+Ubah properti home.
+
+![Hasil Praktikum](images/praktikum9_langkah5.png)
+
+### Langkah 6: Run
+
+![Hasil Praktikum](images/praktikum9_langkah6.gif)
+
+#### Soal 17
+- Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
+
+    Jawab:
+
+    Ketika tombol Change Color ditekan, aplikasi akan menampilkan sebuah AlertDialog yang berisi beberapa opsi warna. Setelah memilih salah satu warna, dialog akan otomatis ditutup dan warna latar belakang halaman berubah sesuai warna yang dipilih. Proses ini terjadi karena setiap tombol pada dialog mengirimkan nilai warna ke halaman utama melalui Navigator.pop(context, color). Nilai tersebut kemudian disimpan pada variabel color, dan fungsi setState() dipanggil untuk memperbarui tampilan sehingga perubahan warna background dapat langsung terlihat.
+
+- Gantilah 3 warna pada langkah 3 dengan warna favorit Anda!
+
+    Jawab:
+
+    ![Hasil Praktikum](images/praktikum9_soal17_pt1.png)
+
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 17".
+
+    ![Hasil Praktikum](images/praktikum9_soal17_pt2.gif)
 
 
     
