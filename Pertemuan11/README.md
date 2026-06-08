@@ -29,6 +29,29 @@ Penambahan method berikut ke dalam class _FuturePageState yang berguna untuk men
 ![Hasil Praktikum](images/praktikum1_langkah4_pt1.png)
 
 #### Soal 2
+- Carilah judul buku favorit Anda di Google Books, lalu ganti ID buku pada variabel path di kode tersebut. Caranya ambil di URL browser Anda seperti gambar berikut ini.
+
+    ![Hasil Praktikum](images/praktikum1_soal2_pt1.png)
+
+- Kemudian cobalah akses di browser URI tersebut dengan lengkap seperti ini. Jika menampilkan data JSON, maka Anda telah berhasil. Lakukan capture milik Anda dan tulis di README pada laporan praktikum. Lalu lakukan commit dengan pesan "W11: Soal 2".
+
+    ![Hasil Praktikum](images/praktikum1_soal2_pt2.png)
+
+### Langkah 5: Tambah kode di ElevatedButton
+Tambah kode pada onPressed di ElevatedButton.
+
+![Hasil Praktikum](images/praktikum1_langkah5.png)
+
+#### Soal 3
+- Jelaskan maksud kode langkah 5 tersebut terkait substring dan catchError!
+
+    Jawab:
+
+    Pada kode tersebut, substring(0, 450) digunakan untuk mengambil dan menampilkan hanya 450 karakter pertama dari data yang diterima melalui value.body, sehingga teks yang ditampilkan tidak terlalu panjang. Sementara itu, catchError() berfungsi untuk menangani kesalahan yang mungkin terjadi saat proses getData(), seperti kegagalan koneksi atau server tidak merespons. Jika terjadi error, variabel result akan diisi dengan pesan "An error occurred", kemudian setState() dipanggil untuk memperbarui tampilan agar pesan kesalahan tersebut dapat ditampilkan kepada pengguna.
+
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 3".
+
+    ![Hasil Praktikum](images/praktikum1_soal3.gif)
 
 ## Praktikum 2: Menggunakan await/async untuk menghindari callbacks
 ### Langkah 1: Buka file main.dart
